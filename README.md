@@ -68,6 +68,31 @@ https://github.com/caskroom/homebrew-cask/issues/4500
 brew update && brew upgrade
 ```
 
+## docker-compose
+docker-compose the release candidate has some nice features, when you wish to install that you will have to do that manually.
+
+### Instructions for v1.2.0rc4
+```bash
+sudo mkdir -p /opt/docker-compose/1.2.0rc4
+sudo chmod -R 777 /opt/docker-compose/1.2.0rc4/
+curl -L https://github.com/docker/compose/releases/download/1.2.0rc4/docker-compose-`uname -s`-`uname -m` > /opt/docker-compose/1.2.0rc4/docker-compose
+chmod +x /opt/docker-compose/1.2.0rc4/docker-compose
+rm /usr/local/bin/docker-compose 
+ln -s  /opt/docker-compose/1.2.0rc4/docker-compose /usr/local/bin/docker-compose
+docker-compose —version
+```
+
+### Instructions forv1.2.0rc3:
+```bash
+sudo mkdir -p /opt/docker-compose/1.2.0rc3
+sudo chmod -R 755 /opt/docker-compose/1.2.0rc3/
+curl -L https://github.com/docker/compose/releases/download/1.2.0rc3/docker-compose-`uname -s`-`uname -m` > /opt/docker-compose/1.2.0rc3/docker-compose
+chmod +x /opt/docker-compose/1.2.0rc3/docker-compose
+rm /usr/local/bin/docker-compose 
+ln -s  /opt/docker-compose/1.2.0rc3/docker-compose /usr/local/bin/docker-compose
+docker-compose —version
+```
+
 ## Boot2Docker
 __Note:__ Boot2docker is deprecated
 
