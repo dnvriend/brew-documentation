@@ -150,9 +150,44 @@ Because the database files will not be removed, you will have to do that yoursel
 * Restore your shared memory settings: `sudo rm /etc/sysctl.conf`
 
 # On Ubuntu
-On Linux there is a great port of Homebrew called [Linuxbrew](https://github.com/Homebrew/linuxbrew)
+On Linux there is a great port of Homebrew called [Linuxbrew](https://github.com/Homebrew/linuxbrew). I use Ubuntu 14.10 Q6600/8G/256GSSD/9800GT, a quite old computer I may say.
 
 ```
 sudo apt-get install build-essential curl git m4 ruby texinfo libbz2-dev libcurl4-openssl-dev libexpat-dev libncurses-dev zlib1g-dev
 sudo apt-get install python-setuptools
+```
+
+## Virtualbox and extensions
+Download and install the .deb from the Virtualbox site, and download and install the extension pack.
+
+## docker
+I installed docker, docker-machine and docker-compose with brew. Worked great.
+
+# docker-machine
+The first machine I created didn't work. docker-machine waited forever. I did the following
+
+* Reboot the computer
+* Resetted the computer, it waited on a VMWare network card (its a PC I get it),
+* Removed the old machine: `docker-machine rm dev`
+* Created a new machine: `docker-machine create dev`
+
+After this it worked. 
+
+## ~/.bashrc
+To make the config look more like my Mac, I added a `~/.bash_profile` and added the following to it:
+
+```bash
+export PATH="$HOME/.linuxbrew/bin:$PATH"
+export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
+export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
+export ACTIVATOR_HOME=~/Downloads/activator-1.3.2
+export BREW_HOME=$HOME/.linuxbrew/bin
+export PATH=$PATH:$HOME/.linuxbrew/opt/go/libexec/bin
+export PATH=$PATH:$ACTIVATOR_HOME:$BREW_HOME
+
+source $HOME/.linuxbrew/etc/bash_completion.d/docker
+source $HOME/.linuxbrew/etc/bash_completion.d/docker-compose
+
+cd projects
+$(docker-machine env dev)
 ```
