@@ -148,3 +148,11 @@ Because the database files will not be removed, you will have to do that yoursel
 * Remove the PostgreSQL user using System Preferences -> Users & Groups.
 
 * Restore your shared memory settings: `sudo rm /etc/sysctl.conf`
+
+# On Ubuntu
+On Linux there is a great port of Homebrew called [Linuxbrew](https://github.com/Homebrew/linuxbrew)
+
+```
+sudo apt-get install build-essential curl git m4 ruby texinfo libbz2-dev libcurl4-openssl-dev libexpat-dev libncurses-dev zlib1g-dev
+sudo apt-get install python-setuptools
+```
