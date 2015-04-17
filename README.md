@@ -47,6 +47,8 @@ brew install mc
 brew cask update
 brew cask install iterm2
 brew cask install gimp
+brew cask install flux
+brew cask install sourcetree
 brew cask install yed
 brew cask install sublime-text3
 brew cask install virtualbox
@@ -69,7 +71,7 @@ brew update && brew upgrade
 ```
 
 ## docker-compose
-docker-compose the release candidate has some nice features, when you wish to install that you will have to do that manually.
+docker-compose 1.2.0 is not (yet) supported by Brew. To install it manually:
 
 ### Instructions for 1.2.0
 ```bash
@@ -80,26 +82,6 @@ curl -L https://github.com/docker/compose/releases/download/1.2.0/docker-compose
 chmod +x /opt/docker-compose/1.2.0/docker-compose
 rm /usr/local/bin/docker-compose
 ln -s  /opt/docker-compose/1.2.0/docker-compose /usr/local/bin/docker-compose
-```
-
-### Instructions for v1.2.0rc4
-```bash
-sudo mkdir -p /opt/docker-compose/1.2.0rc4
-sudo chmod -R 777 /opt/docker-compose/1.2.0rc4/
-curl -L https://github.com/docker/compose/releases/download/1.2.0rc4/docker-compose-`uname -s`-`uname -m` > /opt/docker-compose/1.2.0rc4/docker-compose
-chmod +x /opt/docker-compose/1.2.0rc4/docker-compose
-rm /usr/local/bin/docker-compose 
-ln -s  /opt/docker-compose/1.2.0rc4/docker-compose /usr/local/bin/docker-compose
-```
-
-### Instructions forv1.2.0rc3:
-```bash
-sudo mkdir -p /opt/docker-compose/1.2.0rc3
-sudo chmod -R 755 /opt/docker-compose/1.2.0rc3/
-curl -L https://github.com/docker/compose/releases/download/1.2.0rc3/docker-compose-`uname -s`-`uname -m` > /opt/docker-compose/1.2.0rc3/docker-compose
-chmod +x /opt/docker-compose/1.2.0rc3/docker-compose
-rm /usr/local/bin/docker-compose 
-ln -s  /opt/docker-compose/1.2.0rc3/docker-compose /usr/local/bin/docker-compose
 ```
 
 ## Boot2Docker
