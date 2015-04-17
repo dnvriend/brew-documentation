@@ -71,6 +71,17 @@ brew update && brew upgrade
 ## docker-compose
 docker-compose the release candidate has some nice features, when you wish to install that you will have to do that manually.
 
+### Instructions for 1.2.0
+```bash
+chmod +x /usr/local/bin/docker-compose
+sudo mkdir -p /opt/docker-compose/1.2.0
+sudo chmod -R 777 /opt/docker-compose/1.2.0
+curl -L https://github.com/docker/compose/releases/download/1.2.0/docker-compose-`uname -s`-`uname -m` > /opt/docker-compose/1.2.0/docker-compose
+chmod +x /opt/docker-compose/1.2.0/docker-compose
+rm /usr/local/bin/docker-compose
+ln -s  /opt/docker-compose/1.2.0/docker-compose /usr/local/bin/docker-compose
+```
+
 ### Instructions for v1.2.0rc4
 ```bash
 sudo mkdir -p /opt/docker-compose/1.2.0rc4
@@ -79,7 +90,6 @@ curl -L https://github.com/docker/compose/releases/download/1.2.0rc4/docker-comp
 chmod +x /opt/docker-compose/1.2.0rc4/docker-compose
 rm /usr/local/bin/docker-compose 
 ln -s  /opt/docker-compose/1.2.0rc4/docker-compose /usr/local/bin/docker-compose
-docker-compose —version
 ```
 
 ### Instructions forv1.2.0rc3:
@@ -90,7 +100,6 @@ curl -L https://github.com/docker/compose/releases/download/1.2.0rc3/docker-comp
 chmod +x /opt/docker-compose/1.2.0rc3/docker-compose
 rm /usr/local/bin/docker-compose 
 ln -s  /opt/docker-compose/1.2.0rc3/docker-compose /usr/local/bin/docker-compose
-docker-compose —version
 ```
 
 ## Boot2Docker
