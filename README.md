@@ -182,3 +182,6 @@ source $HOME/.linuxbrew/etc/bash_completion.d/docker-compose
 cd projects
 $(docker-machine env dev)
 ```
+
+# Things to do after installing Ubuntu
+- [Top things to do after installing Ubuntu](http://www.unixmen.com/top-things-installing-ubuntu-14-1014-0413-1013-0412-1012-04/)
