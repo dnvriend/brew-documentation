@@ -185,3 +185,10 @@ $(docker-machine env dev)
 
 # Things to do after installing Ubuntu
 - [Top things to do after installing Ubuntu](http://www.unixmen.com/top-things-installing-ubuntu-14-1014-0413-1013-0412-1012-04/)
+
+# Upgrade from Ubuntu 14.10 to 15.04
+Execute the following and follow the onscreen instructions.
+
+```bash
+sudo do-release-upgrade
+```
