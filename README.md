@@ -67,7 +67,9 @@ brew config
 ```
 
 # How to lock a screen
-- [Locking a screen on mac](http://www.macworld.co.uk/how-to/mac/how-lock-mac-3639053/)
+- Navigate to System Preferences > Security & Privacy > General
+- Enable the 'Require password' option
+- On your keyboard press the following simultaneously: Control + Shift + Eject (or Power)
 
 ## Brew cask manual
 - [brew cask manual](https://github.com/caskroom/homebrew-cask/blob/master/USAGE.md)
