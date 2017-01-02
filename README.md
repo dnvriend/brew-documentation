@@ -66,6 +66,9 @@ brew cask list
 brew config
 ```
 
+# How to lock a screen
+- [Locking a screen on mac](http://www.macworld.co.uk/how-to/mac/how-lock-mac-3639053/)
+
 ## Brew cask manual
 - [brew cask manual](https://github.com/caskroom/homebrew-cask/blob/master/USAGE.md)
 
