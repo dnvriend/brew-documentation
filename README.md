@@ -32,62 +32,42 @@ source `brew --repository`/Library/Contributions/brew_bash_completion.sh
 # My brew script
 
 ```bash
+# Install brew
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+# Install brew cask
+brew tap caskroom/cask
+
 # Brew
 brew update
 brew upgrade
+brew cask update
+brew cask install java
 brew install scala
 brew install sbt
 brew install typesafe-activator
-brew install maven
-brew install boot2docker
-brew install docker-compose
-brew install mc
 
 # Brew cask:
-brew cask update
 brew cask install iterm2
-brew cask install gimp
-brew cask install flux
-brew cask install sourcetree
-brew cask install yed
-brew cask install sublime-text3
-brew cask install virtualbox
-brew cask install vagrant
+brew cask install sublime-text
 brew cask install intellij-idea
-brew cask install pgadmin3
-brew cask install java
-brew cask install java6
-brew cask install java7
+brew cask install docker
 ```
-
-Note: IntelliJ needs Java6:
-https://github.com/caskroom/homebrew-cask/issues/4500
 
 ## Some commands
 
 ```bash
 # upgrade all packages
 brew update && brew upgrade
+# Get list of installed packages
+brew list
+brew cask list
+# Get brew configuration
+brew config
 ```
 
-## docker-compose
-docker-compose 1.2.0 is not (yet) supported by Brew. To install it manually:
-
-### Instructions for 1.2.0
-```bash
-chmod +x /usr/local/bin/docker-compose
-sudo mkdir -p /opt/docker-compose/1.2.0
-sudo chmod -R 777 /opt/docker-compose/1.2.0
-curl -L https://github.com/docker/compose/releases/download/1.2.0/docker-compose-`uname -s`-`uname -m` > /opt/docker-compose/1.2.0/docker-compose
-chmod +x /opt/docker-compose/1.2.0/docker-compose
-rm /usr/local/bin/docker-compose
-ln -s  /opt/docker-compose/1.2.0/docker-compose /usr/local/bin/docker-compose
-```
-
-## Boot2Docker
-__Note:__ Boot2docker is deprecated
-
-* Launching boot2docker: `ln -sfv /usr/local/opt/boot2docker/*.plist ~/Library/LaunchAgents`
+## Brew cask manual
+- [brew cask manual](https://github.com/caskroom/homebrew-cask/blob/master/USAGE.md)
 
 ## Handling multiple Java versions
 OSX has the handy `java_home` command, so you could place the following three lines in your `~/.bash_profile` and 
@@ -98,6 +78,30 @@ comment the one out that you want to use. Then execute the `~/.bash_profile` scr
 #export JAVA_HOME=`/usr/libexec/java_home -v 1.7`
 export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
 ```
+
+## Working with an old Cask version
+- [Migrating to the new location](https://github.com/caskroom/homebrew-cask/issues/21913)
+
+# Old info
+
+Note: IntelliJ needs Java6:
+https://github.com/caskroom/homebrew-cask/issues/4500
+
+# Old script
+```
+#brew cask install gimp
+#brew cask install flux
+#brew cask install sourcetree
+#brew cask install yed
+#brew cask install sublime-text3
+#brew cask install virtualbox
+#brew cask install vagrant
+#brew cask install pgadmin3
+#brew cask install java
+#brew cask install java6
+#brew cask install java7
+```
+
 
 ## Java directories
 Brew cask will install Java to:
